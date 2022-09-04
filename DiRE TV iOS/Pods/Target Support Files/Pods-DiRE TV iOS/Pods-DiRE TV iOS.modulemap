@@ -1,0 +1,6 @@
+framework module Pods_DiRE_TV_iOS {
+  umbrella header "Pods-DiRE TV iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

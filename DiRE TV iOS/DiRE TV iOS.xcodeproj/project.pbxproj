@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C81B348E28C038DC005786C9 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B348828C038DC005786C9 /* RobotoCondensed-Italic.ttf */; };
+		C81B348F28C038DC005786C9 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B348928C038DC005786C9 /* RobotoCondensed-BoldItalic.ttf */; };
+		C81B349028C038DC005786C9 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B348A28C038DC005786C9 /* RobotoCondensed-Light.ttf */; };
+		C81B349128C038DC005786C9 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B348B28C038DC005786C9 /* RobotoCondensed-LightItalic.ttf */; };
+		C81B349228C038DC005786C9 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B348C28C038DC005786C9 /* RobotoCondensed-Regular.ttf */; };
+		C81B349328C038DC005786C9 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B348D28C038DC005786C9 /* RobotoCondensed-Bold.ttf */; };
+		C81B349528C03D89005786C9 /* iPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B349428C03D89005786C9 /* iPadViewController.swift */; };
+		C81B349728C06114005786C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B349628C06114005786C9 /* Model.swift */; };
+		C81B349928C073DB005786C9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B349828C073DB005786C9 /* WebViewController.swift */; };
+		C81B349B28C0AC24005786C9 /* Ingenue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C81B349A28C0AC24005786C9 /* Ingenue.ttf */; };
+		C8231E7D28BFEABA005F0B17 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6528BFEAB9005F0B17 /* Float+Extensions.swift */; };
+		C8231E7E28BFEABA005F0B17 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6628BFEAB9005F0B17 /* Double+Extensions.swift */; };
+		C8231E7F28BFEABA005F0B17 /* VideoLoadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6728BFEAB9005F0B17 /* VideoLoadManager.swift */; };
+		C8231E8028BFEABA005F0B17 /* VideoDownloaderSessionDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6828BFEAB9005F0B17 /* VideoDownloaderSessionDelegateHandler.swift */; };
+		C8231E8128BFEABA005F0B17 /* VideoCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6928BFEAB9005F0B17 /* VideoCacheManager.swift */; };
+		C8231E8228BFEABA005F0B17 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6A28BFEAB9005F0B17 /* Int+Extensions.swift */; };
+		C8231E8328BFEABA005F0B17 /* VideoCacheAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6B28BFEAB9005F0B17 /* VideoCacheAction.swift */; };
+		C8231E8428BFEABA005F0B17 /* VideoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6C28BFEAB9005F0B17 /* VideoDownloader.swift */; };
+		C8231E8528BFEABA005F0B17 /* VideoDownloadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6D28BFEAB9005F0B17 /* VideoDownloadInfo.swift */; };
+		C8231E8628BFEABA005F0B17 /* VideoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6E28BFEAB9005F0B17 /* VideoLoader.swift */; };
+		C8231E8728BFEABA005F0B17 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E6F28BFEAB9005F0B17 /* VideoPlayerView.swift */; };
+		C8231E8828BFEABA005F0B17 /* VideoPreloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7028BFEAB9005F0B17 /* VideoPreloadManager.swift */; };
+		C8231E8928BFEABA005F0B17 /* VideoRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7128BFEAB9005F0B17 /* VideoRequestLoader.swift */; };
+		C8231E8A28BFEABA005F0B17 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7228BFEAB9005F0B17 /* VideoInfo.swift */; };
+		C8231E8B28BFEABA005F0B17 /* VideoCacheConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7328BFEABA005F0B17 /* VideoCacheConfiguration.swift */; };
+		C8231E8C28BFEABA005F0B17 /* AVAssetResourceLoadingRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7428BFEABA005F0B17 /* AVAssetResourceLoadingRequest+Extensions.swift */; };
+		C8231E8D28BFEABA005F0B17 /* VideoFullscreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7528BFEABA005F0B17 /* VideoFullscreenTransitioner.swift */; };
+		C8231E8E28BFEABA005F0B17 /* AVPlayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7628BFEABA005F0B17 /* AVPlayer+Extensions.swift */; };
+		C8231E8F28BFEABA005F0B17 /* VideoCacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7728BFEABA005F0B17 /* VideoCacheHandler.swift */; };
+		C8231E9028BFEABA005F0B17 /* GSAVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7828BFEABA005F0B17 /* GSAVPlayerViewController.swift */; };
+		C8231E9128BFEABA005F0B17 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7928BFEABA005F0B17 /* String+Extensions.swift */; };
+		C8231E9228BFEABA005F0B17 /* VideoDownloaderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7A28BFEABA005F0B17 /* VideoDownloaderHandler.swift */; };
+		C8231E9328BFEABA005F0B17 /* VideoFullscreenPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7B28BFEABA005F0B17 /* VideoFullscreenPlayerView.swift */; };
+		C8231E9428BFEABA005F0B17 /* AVPlayerItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8231E7C28BFEABA005F0B17 /* AVPlayerItem+Extensions.swift */; };
+		C8231E9C28BFECE2005F0B17 /* _splash_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C8231E9628BFECE2005F0B17 /* _splash_background.mp4 */; };
+		C8231E9D28BFECE2005F0B17 /* splash_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C8231E9728BFECE2005F0B17 /* splash_background.mp4 */; };
+		C8231E9E28BFECE2005F0B17 /* ticker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8231E9828BFECE2005F0B17 /* ticker.png */; };
+		C8231E9F28BFECE2005F0B17 /* white_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C8231E9928BFECE2005F0B17 /* white_logo.png */; };
+		C8231EA028BFECE2005F0B17 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C8231E9A28BFECE2005F0B17 /* logo.png */; };
+		C8231EA128BFECE2005F0B17 /* dire_tv.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C8231E9B28BFECE2005F0B17 /* dire_tv.mp4 */; };
+		C82EC80528C21475006F7205 /* iPadWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82EC80428C21475006F7205 /* iPadWebViewController.swift */; };
+		C8A1410228BFC63400CFB1ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1410128BFC63400CFB1ED /* AppDelegate.swift */; };
+		C8A1410428BFC63400CFB1ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1410328BFC63400CFB1ED /* SceneDelegate.swift */; };
+		C8A1410628BFC63400CFB1ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1410528BFC63400CFB1ED /* ViewController.swift */; };
+		C8A1410928BFC63400CFB1ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A1410728BFC63400CFB1ED /* Main.storyboard */; };
+		C8A1410B28BFC63600CFB1ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1410A28BFC63600CFB1ED /* Assets.xcassets */; };
+		C8A1410E28BFC63600CFB1ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A1410C28BFC63600CFB1ED /* LaunchScreen.storyboard */; };
+		EA85C22BF6512BB928C0F4A2 /* Pods_DiRE_TV_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69C062982D3C28C2283BAF5 /* Pods_DiRE_TV_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6D658C4B09266FA755D89629 /* Pods-DiRE TV iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiRE TV iOS.release.xcconfig"; path = "Target Support Files/Pods-DiRE TV iOS/Pods-DiRE TV iOS.release.xcconfig"; sourceTree = "<group>"; };
+		C81B348828C038DC005786C9 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		C81B348928C038DC005786C9 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C81B348A28C038DC005786C9 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		C81B348B28C038DC005786C9 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		C81B348C28C038DC005786C9 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		C81B348D28C038DC005786C9 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		C81B349428C03D89005786C9 /* iPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadViewController.swift; sourceTree = "<group>"; };
+		C81B349628C06114005786C9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C81B349828C073DB005786C9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C81B349A28C0AC24005786C9 /* Ingenue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ingenue.ttf; sourceTree = "<group>"; };
+		C8231E6528BFEAB9005F0B17 /* Float+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E6628BFEAB9005F0B17 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E6728BFEAB9005F0B17 /* VideoLoadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoLoadManager.swift; sourceTree = "<group>"; };
+		C8231E6828BFEAB9005F0B17 /* VideoDownloaderSessionDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownloaderSessionDelegateHandler.swift; sourceTree = "<group>"; };
+		C8231E6928BFEAB9005F0B17 /* VideoCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCacheManager.swift; sourceTree = "<group>"; };
+		C8231E6A28BFEAB9005F0B17 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E6B28BFEAB9005F0B17 /* VideoCacheAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCacheAction.swift; sourceTree = "<group>"; };
+		C8231E6C28BFEAB9005F0B17 /* VideoDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownloader.swift; sourceTree = "<group>"; };
+		C8231E6D28BFEAB9005F0B17 /* VideoDownloadInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownloadInfo.swift; sourceTree = "<group>"; };
+		C8231E6E28BFEAB9005F0B17 /* VideoLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoLoader.swift; sourceTree = "<group>"; };
+		C8231E6F28BFEAB9005F0B17 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		C8231E7028BFEAB9005F0B17 /* VideoPreloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreloadManager.swift; sourceTree = "<group>"; };
+		C8231E7128BFEAB9005F0B17 /* VideoRequestLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRequestLoader.swift; sourceTree = "<group>"; };
+		C8231E7228BFEAB9005F0B17 /* VideoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		C8231E7328BFEABA005F0B17 /* VideoCacheConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCacheConfiguration.swift; sourceTree = "<group>"; };
+		C8231E7428BFEABA005F0B17 /* AVAssetResourceLoadingRequest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAssetResourceLoadingRequest+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E7528BFEABA005F0B17 /* VideoFullscreenTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFullscreenTransitioner.swift; sourceTree = "<group>"; };
+		C8231E7628BFEABA005F0B17 /* AVPlayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E7728BFEABA005F0B17 /* VideoCacheHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCacheHandler.swift; sourceTree = "<group>"; };
+		C8231E7828BFEABA005F0B17 /* GSAVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSAVPlayerViewController.swift; sourceTree = "<group>"; };
+		C8231E7928BFEABA005F0B17 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E7A28BFEABA005F0B17 /* VideoDownloaderHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownloaderHandler.swift; sourceTree = "<group>"; };
+		C8231E7B28BFEABA005F0B17 /* VideoFullscreenPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFullscreenPlayerView.swift; sourceTree = "<group>"; };
+		C8231E7C28BFEABA005F0B17 /* AVPlayerItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Extensions.swift"; sourceTree = "<group>"; };
+		C8231E9628BFECE2005F0B17 /* _splash_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = _splash_background.mp4; sourceTree = "<group>"; };
+		C8231E9728BFECE2005F0B17 /* splash_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash_background.mp4; sourceTree = "<group>"; };
+		C8231E9828BFECE2005F0B17 /* ticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticker.png; sourceTree = "<group>"; };
+		C8231E9928BFECE2005F0B17 /* white_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_logo.png; sourceTree = "<group>"; };
+		C8231E9A28BFECE2005F0B17 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		C8231E9B28BFECE2005F0B17 /* dire_tv.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dire_tv.mp4; sourceTree = "<group>"; };
+		C82EC80428C21475006F7205 /* iPadWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadWebViewController.swift; sourceTree = "<group>"; };
+		C8A140FE28BFC63400CFB1ED /* DiRE TV iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DiRE TV iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8A1410128BFC63400CFB1ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8A1410328BFC63400CFB1ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C8A1410528BFC63400CFB1ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8A1410828BFC63400CFB1ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8A1410A28BFC63600CFB1ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8A1410D28BFC63600CFB1ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8A1410F28BFC63600CFB1ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D37C59AC3D75B68B8CA2A430 /* Pods-DiRE TV iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiRE TV iOS.debug.xcconfig"; path = "Target Support Files/Pods-DiRE TV iOS/Pods-DiRE TV iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F69C062982D3C28C2283BAF5 /* Pods_DiRE_TV_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiRE_TV_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8A140FB28BFC63400CFB1ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA85C22BF6512BB928C0F4A2 /* Pods_DiRE_TV_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20D8DA78DCD17E2D5CDD4A19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F69C062982D3C28C2283BAF5 /* Pods_DiRE_TV_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D669565F3F8F1254BD68773 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D37C59AC3D75B68B8CA2A430 /* Pods-DiRE TV iOS.debug.xcconfig */,
+				6D658C4B09266FA755D89629 /* Pods-DiRE TV iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C81B348728C038BE005786C9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C81B349A28C0AC24005786C9 /* Ingenue.ttf */,
+				C81B348D28C038DC005786C9 /* RobotoCondensed-Bold.ttf */,
+				C81B348928C038DC005786C9 /* RobotoCondensed-BoldItalic.ttf */,
+				C81B348828C038DC005786C9 /* RobotoCondensed-Italic.ttf */,
+				C81B348A28C038DC005786C9 /* RobotoCondensed-Light.ttf */,
+				C81B348B28C038DC005786C9 /* RobotoCondensed-LightItalic.ttf */,
+				C81B348C28C038DC005786C9 /* RobotoCondensed-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C8231E6428BFEA97005F0B17 /* GSPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C8231E7428BFEABA005F0B17 /* AVAssetResourceLoadingRequest+Extensions.swift */,
+				C8231E7628BFEABA005F0B17 /* AVPlayer+Extensions.swift */,
+				C8231E7C28BFEABA005F0B17 /* AVPlayerItem+Extensions.swift */,
+				C8231E6628BFEAB9005F0B17 /* Double+Extensions.swift */,
+				C8231E6528BFEAB9005F0B17 /* Float+Extensions.swift */,
+				C8231E7828BFEABA005F0B17 /* GSAVPlayerViewController.swift */,
+				C8231E6A28BFEAB9005F0B17 /* Int+Extensions.swift */,
+				C8231E7928BFEABA005F0B17 /* String+Extensions.swift */,
+				C8231E6B28BFEAB9005F0B17 /* VideoCacheAction.swift */,
+				C8231E7328BFEABA005F0B17 /* VideoCacheConfiguration.swift */,
+				C8231E7728BFEABA005F0B17 /* VideoCacheHandler.swift */,
+				C8231E6928BFEAB9005F0B17 /* VideoCacheManager.swift */,
+				C8231E6C28BFEAB9005F0B17 /* VideoDownloader.swift */,
+				C8231E7A28BFEABA005F0B17 /* VideoDownloaderHandler.swift */,
+				C8231E6828BFEAB9005F0B17 /* VideoDownloaderSessionDelegateHandler.swift */,
+				C8231E6D28BFEAB9005F0B17 /* VideoDownloadInfo.swift */,
+				C8231E7B28BFEABA005F0B17 /* VideoFullscreenPlayerView.swift */,
+				C8231E7528BFEABA005F0B17 /* VideoFullscreenTransitioner.swift */,
+				C8231E7228BFEAB9005F0B17 /* VideoInfo.swift */,
+				C8231E6E28BFEAB9005F0B17 /* VideoLoader.swift */,
+				C8231E6728BFEAB9005F0B17 /* VideoLoadManager.swift */,
+				C8231E6F28BFEAB9005F0B17 /* VideoPlayerView.swift */,
+				C8231E7028BFEAB9005F0B17 /* VideoPreloadManager.swift */,
+				C8231E7128BFEAB9005F0B17 /* VideoRequestLoader.swift */,
+			);
+			path = GSPlayer;
+			sourceTree = "<group>";
+		};
+		C8231E9528BFECB9005F0B17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8231E9628BFECE2005F0B17 /* _splash_background.mp4 */,
+				C8231E9B28BFECE2005F0B17 /* dire_tv.mp4 */,
+				C8231E9A28BFECE2005F0B17 /* logo.png */,
+				C8231E9728BFECE2005F0B17 /* splash_background.mp4 */,
+				C8231E9828BFECE2005F0B17 /* ticker.png */,
+				C8231E9928BFECE2005F0B17 /* white_logo.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C8A140F528BFC63400CFB1ED = {
+			isa = PBXGroup;
+			children = (
+				C8A1410028BFC63400CFB1ED /* DiRE TV iOS */,
+				C8A140FF28BFC63400CFB1ED /* Products */,
+				4D669565F3F8F1254BD68773 /* Pods */,
+				20D8DA78DCD17E2D5CDD4A19 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C8A140FF28BFC63400CFB1ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8A140FE28BFC63400CFB1ED /* DiRE TV iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8A1410028BFC63400CFB1ED /* DiRE TV iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C81B348728C038BE005786C9 /* Fonts */,
+				C8231E9528BFECB9005F0B17 /* Resources */,
+				C8231E6428BFEA97005F0B17 /* GSPlayer */,
+				C8A1410128BFC63400CFB1ED /* AppDelegate.swift */,
+				C8A1410328BFC63400CFB1ED /* SceneDelegate.swift */,
+				C8A1410528BFC63400CFB1ED /* ViewController.swift */,
+				C8A1410728BFC63400CFB1ED /* Main.storyboard */,
+				C8A1410A28BFC63600CFB1ED /* Assets.xcassets */,
+				C8A1410C28BFC63600CFB1ED /* LaunchScreen.storyboard */,
+				C8A1410F28BFC63600CFB1ED /* Info.plist */,
+				C81B349428C03D89005786C9 /* iPadViewController.swift */,
+				C81B349628C06114005786C9 /* Model.swift */,
+				C81B349828C073DB005786C9 /* WebViewController.swift */,
+				C82EC80428C21475006F7205 /* iPadWebViewController.swift */,
+			);
+			path = "DiRE TV iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8A140FD28BFC63400CFB1ED /* DiRE TV iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8A1411228BFC63600CFB1ED /* Build configuration list for PBXNativeTarget "DiRE TV iOS" */;
+			buildPhases = (
+				897A50845E560FF94902A2D4 /* [CP] Check Pods Manifest.lock */,
+				C8A140FA28BFC63400CFB1ED /* Sources */,
+				C8A140FB28BFC63400CFB1ED /* Frameworks */,
+				C8A140FC28BFC63400CFB1ED /* Resources */,
+				EAA19D3BB5C3DF9A642F8C76 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DiRE TV iOS";
+			productName = "DiRE TV iOS";
+			productReference = C8A140FE28BFC63400CFB1ED /* DiRE TV iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8A140F628BFC63400CFB1ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					C8A140FD28BFC63400CFB1ED = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = C8A140F928BFC63400CFB1ED /* Build configuration list for PBXProject "DiRE TV iOS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C8A140F528BFC63400CFB1ED;
+			productRefGroup = C8A140FF28BFC63400CFB1ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8A140FD28BFC63400CFB1ED /* DiRE TV iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8A140FC28BFC63400CFB1ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8A1410E28BFC63600CFB1ED /* LaunchScreen.storyboard in Resources */,
+				C8A1410B28BFC63600CFB1ED /* Assets.xcassets in Resources */,
+				C81B349B28C0AC24005786C9 /* Ingenue.ttf in Resources */,
+				C81B349228C038DC005786C9 /* RobotoCondensed-Regular.ttf in Resources */,
+				C8231E9C28BFECE2005F0B17 /* _splash_background.mp4 in Resources */,
+				C8231E9F28BFECE2005F0B17 /* white_logo.png in Resources */,
+				C81B349128C038DC005786C9 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				C81B349328C038DC005786C9 /* RobotoCondensed-Bold.ttf in Resources */,
+				C8231EA128BFECE2005F0B17 /* dire_tv.mp4 in Resources */,
+				C8231EA028BFECE2005F0B17 /* logo.png in Resources */,
+				C8231E9E28BFECE2005F0B17 /* ticker.png in Resources */,
+				C81B348F28C038DC005786C9 /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				C8A1410928BFC63400CFB1ED /* Main.storyboard in Resources */,
+				C8231E9D28BFECE2005F0B17 /* splash_background.mp4 in Resources */,
+				C81B349028C038DC005786C9 /* RobotoCondensed-Light.ttf in Resources */,
+				C81B348E28C038DC005786C9 /* RobotoCondensed-Italic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		897A50845E560FF94902A2D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiRE TV iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAA19D3BB5C3DF9A642F8C76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiRE TV iOS/Pods-DiRE TV iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiRE TV iOS/Pods-DiRE TV iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiRE TV iOS/Pods-DiRE TV iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8A140FA28BFC63400CFB1ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8231E8128BFEABA005F0B17 /* VideoCacheManager.swift in Sources */,
+				C8231E8B28BFEABA005F0B17 /* VideoCacheConfiguration.swift in Sources */,
+				C8A1410628BFC63400CFB1ED /* ViewController.swift in Sources */,
+				C8231E8F28BFEABA005F0B17 /* VideoCacheHandler.swift in Sources */,
+				C8231E9228BFEABA005F0B17 /* VideoDownloaderHandler.swift in Sources */,
+				C82EC80528C21475006F7205 /* iPadWebViewController.swift in Sources */,
+				C8231E9128BFEABA005F0B17 /* String+Extensions.swift in Sources */,
+				C8231E8C28BFEABA005F0B17 /* AVAssetResourceLoadingRequest+Extensions.swift in Sources */,
+				C8231E8828BFEABA005F0B17 /* VideoPreloadManager.swift in Sources */,
+				C8231E7F28BFEABA005F0B17 /* VideoLoadManager.swift in Sources */,
+				C8231E9428BFEABA005F0B17 /* AVPlayerItem+Extensions.swift in Sources */,
+				C8231E8E28BFEABA005F0B17 /* AVPlayer+Extensions.swift in Sources */,
+				C8231E8228BFEABA005F0B17 /* Int+Extensions.swift in Sources */,
+				C81B349528C03D89005786C9 /* iPadViewController.swift in Sources */,
+				C81B349928C073DB005786C9 /* WebViewController.swift in Sources */,
+				C8231E8428BFEABA005F0B17 /* VideoDownloader.swift in Sources */,
+				C8231E8A28BFEABA005F0B17 /* VideoInfo.swift in Sources */,
+				C8231E8528BFEABA005F0B17 /* VideoDownloadInfo.swift in Sources */,
+				C8231E8028BFEABA005F0B17 /* VideoDownloaderSessionDelegateHandler.swift in Sources */,
+				C8A1410228BFC63400CFB1ED /* AppDelegate.swift in Sources */,
+				C8231E8D28BFEABA005F0B17 /* VideoFullscreenTransitioner.swift in Sources */,
+				C8231E7D28BFEABA005F0B17 /* Float+Extensions.swift in Sources */,
+				C8231E8928BFEABA005F0B17 /* VideoRequestLoader.swift in Sources */,
+				C8A1410428BFC63400CFB1ED /* SceneDelegate.swift in Sources */,
+				C8231E9328BFEABA005F0B17 /* VideoFullscreenPlayerView.swift in Sources */,
+				C8231E8328BFEABA005F0B17 /* VideoCacheAction.swift in Sources */,
+				C8231E9028BFEABA005F0B17 /* GSAVPlayerViewController.swift in Sources */,
+				C81B349728C06114005786C9 /* Model.swift in Sources */,
+				C8231E7E28BFEABA005F0B17 /* Double+Extensions.swift in Sources */,
+				C8231E8628BFEABA005F0B17 /* VideoLoader.swift in Sources */,
+				C8231E8728BFEABA005F0B17 /* VideoPlayerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C8A1410728BFC63400CFB1ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8A1410828BFC63400CFB1ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C8A1410C28BFC63600CFB1ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8A1410D28BFC63600CFB1ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C8A1411028BFC63600CFB1ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C8A1411128BFC63600CFB1ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8A1411328BFC63600CFB1ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D37C59AC3D75B68B8CA2A430 /* Pods-DiRE TV iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 23;
+				DEVELOPMENT_TEAM = 9M7PC74CCM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DiRE TV iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "DiRE TV";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dire.tvapp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C8A1411428BFC63600CFB1ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D658C4B09266FA755D89629 /* Pods-DiRE TV iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 23;
+				DEVELOPMENT_TEAM = 9M7PC74CCM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DiRE TV iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "DiRE TV";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dire.tvapp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C8A140F928BFC63400CFB1ED /* Build configuration list for PBXProject "DiRE TV iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8A1411028BFC63600CFB1ED /* Debug */,
+				C8A1411128BFC63600CFB1ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8A1411228BFC63600CFB1ED /* Build configuration list for PBXNativeTarget "DiRE TV iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8A1411328BFC63600CFB1ED /* Debug */,
+				C8A1411428BFC63600CFB1ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8A140F628BFC63400CFB1ED /* Project object */;
+}

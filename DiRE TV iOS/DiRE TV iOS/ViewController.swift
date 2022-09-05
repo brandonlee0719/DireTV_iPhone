@@ -90,6 +90,16 @@ class ViewController: UIViewController   {
         }
     }
     
+    func fromwebview() {
+        getVideos(completion: { (videos) in
+            DispatchQueue.main.async {
+                self.videosList = videos
+                playerIndex = 0
+                self.checkPreload()
+            }
+        })
+    }
+    
     
     @objc func liveLoad() {
          getLive(completion: { (value) in

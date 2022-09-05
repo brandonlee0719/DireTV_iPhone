@@ -263,6 +263,17 @@ class iPadViewController: UIViewController {
             object: playerView.playerLayer.player?.currentItem)
     }
     
+    
+    func fromwebview() {
+        getVideos(completion: { (videos) in
+            DispatchQueue.main.async {
+                self.videosList = videos
+                playerIndex = 0
+                self.checkPreload()
+            }
+        })
+    }
+    
     @objc func playerDidFinishPlaying1(_ note: NSNotification) {
         playVideoUrl()
         checkPreload()

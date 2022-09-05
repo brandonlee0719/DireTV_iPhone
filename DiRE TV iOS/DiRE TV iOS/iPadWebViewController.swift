@@ -22,6 +22,9 @@ class iPadWebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         let myURL = URL(string: self.eventURl)
          let myRequest = URLRequest(url: myURL!)
         self.webView.load(myRequest)
@@ -32,6 +35,10 @@ class iPadWebViewController: UIViewController {
     
     
     @objc func liveLoad() {
+    
+        
+        
+        
          getLive(completion: { (val) in
              if val == false {
                  self.liveTimer.invalidate()
@@ -49,6 +56,10 @@ class iPadWebViewController: UIViewController {
 //    "toPhone"
     
     func getLive(completion: @escaping (Bool)-> ()) {
+        
+        
+        
+        
         let urlString = "https://tv.dire.it/api/Videos/getlivestatus"
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) {data, res, err in

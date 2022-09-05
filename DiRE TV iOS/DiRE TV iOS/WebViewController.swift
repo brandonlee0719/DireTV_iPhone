@@ -35,6 +35,9 @@ class WebViewController: UIViewController, WKUIDelegate {
          getLive(completion: { (val) in
              
              if val == false {
+                 
+                 
+                 
                  self.liveTimer.invalidate()
                  DispatchQueue.main.async {
                      if let topController = UIApplication.topViewController() as? WebViewController{
@@ -46,6 +49,7 @@ class WebViewController: UIViewController, WKUIDelegate {
          })
      }
     
+   
     
 //    "toPhone"
     

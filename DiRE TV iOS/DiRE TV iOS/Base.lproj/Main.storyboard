@@ -36,13 +36,13 @@
                                         <rect key="frame" x="10.000000000000004" y="6.3333333333333126" width="55.333333333333343" height="27.333333333333329"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey1-JH-leA">
-                                        <rect key="frame" x="72.333333333333343" y="20" width="59.666666666666657" height="0.0"/>
+                                        <rect key="frame" x="72.333333333333343" y="20" width="89.333333333333343" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRl-yT-3o9" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                        <rect key="frame" x="142" y="20" width="548" height="0.0"/>
+                                        <rect key="frame" x="171.66666666666669" y="20" width="518.33333333333326" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -57,9 +57,7 @@
                                     <constraint firstAttribute="trailing" secondItem="WRl-yT-3o9" secondAttribute="trailing" id="AtO-gU-Wto"/>
                                     <constraint firstItem="WRl-yT-3o9" firstAttribute="centerY" secondItem="Ey1-JH-leA" secondAttribute="centerY" id="EMX-xa-MXV"/>
                                     <constraint firstItem="Ey1-JH-leA" firstAttribute="leading" secondItem="fWX-vm-HKt" secondAttribute="trailing" constant="7" id="Elh-La-fwN"/>
-                                    <constraint firstItem="Ey1-JH-leA" firstAttribute="width" secondItem="HG0-2p-9ZQ" secondAttribute="width" multiplier="0.085" constant="1" id="Uq8-TY-wg8">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
-                                    </constraint>
+                                    <constraint firstItem="Ey1-JH-leA" firstAttribute="width" secondItem="HG0-2p-9ZQ" secondAttribute="width" multiplier="0.128" constant="1" id="Uq8-TY-wg8"/>
                                     <constraint firstItem="fWX-vm-HKt" firstAttribute="height" secondItem="HG0-2p-9ZQ" secondAttribute="height" multiplier="0.68" id="ebi-uJ-DFR"/>
                                     <constraint firstAttribute="height" constant="40" id="pGX-5N-Zls">
                                         <variation key="heightClass=regular-widthClass=regular" constant="10"/>
@@ -152,31 +150,31 @@
         <scene sceneID="o73-xS-qMD">
             <objects>
                 <viewController storyboardIdentifier="iPadViewController" id="6xG-Yw-5Tv" customClass="iPadViewController" customModule="DiRE_TV_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Jpm-Eg-2Zn">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jpm-Eg-2Zn">
                         <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-IB-zzO" customClass="VideoPlayerView" customModule="DiRE_TV_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="926" height="327"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-IB-zzO" customClass="VideoPlayerView" customModule="DiRE_TV_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="581.33333333333337" height="327"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gmL-IB-zzO" secondAttribute="height" multiplier="16:9" id="7BA-cb-42F"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cJ-YQ-z1X">
-                                <rect key="frame" x="0.0" y="327" width="926" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cJ-YQ-z1X">
+                                <rect key="frame" x="0.0" y="327" width="581.33333333333337" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticker.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Pf-jq-0xb">
-                                        <rect key="frame" x="15" y="8" width="74" height="64"/>
+                                        <rect key="frame" x="14.999999999999996" y="8" width="46.666666666666657" height="64"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arI-Fp-qV0">
-                                        <rect key="frame" x="104" y="40" width="92.666666666666686" height="0.0"/>
+                                        <rect key="frame" x="76.666666666666671" y="40" width="58.000000000000014" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyI-jQ-PRL" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                        <rect key="frame" x="211.66666666666669" y="0.0" width="714.33333333333326" height="80"/>
+                                        <rect key="frame" x="149.66666666666666" y="0.0" width="431.66666666666674" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -200,10 +198,10 @@
                                     <constraint firstItem="KyI-jQ-PRL" firstAttribute="centerY" secondItem="arI-Fp-qV0" secondAttribute="centerY" id="wdF-YQ-zNE"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="white_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-3D-f9z">
-                                <rect key="frame" x="842.66666666666663" y="5" width="83.333333333333371" height="45.666666666666664"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-3D-f9z">
+                                <rect key="frame" x="529" y="5" width="52.333333333333371" height="45.666666666666664"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Problema di connessione alla rete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXj-Na-QhL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Problema di connessione alla rete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXj-Na-QhL">
                                 <rect key="frame" x="462.66666666666669" y="153.66666666666666" width="1" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="0ZY-ND-EFj">

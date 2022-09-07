@@ -15,7 +15,8 @@ import Network
 
 var playerIndex = -1
 
-class ViewController: UIViewController   {
+class ViewController: UIViewController, fromsecondVC   {
+   
     
     
     @IBOutlet weak var playerView: VideoPlayerView!
@@ -37,6 +38,8 @@ class ViewController: UIViewController   {
     var eventURl =
           "https://vimeo.com/event/2171363/embed/11f17392b8?autoplay=1&loop=1&autopause=0&muted=0"
     
+    var checktimer = Timer()
+    
     var timer = Timer()
     var playerAVView:AVPlayer!
     var tickerTimer = Timer()
@@ -54,9 +57,6 @@ class ViewController: UIViewController   {
         liveTimer.invalidate()
         NotificationCenter.default.removeObserver(self)
     }
-    
-
-   
     
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
@@ -90,30 +90,49 @@ class ViewController: UIViewController   {
         }
     }
     
-    func fromwebview() {
-        getVideos(completion: { (videos) in
-            DispatchQueue.main.async {
-                self.videosList = videos
-                playerIndex = 0
-                self.checkPreload()
-            }
-        })
+    
+    @IBAction func testClicked(_ sender: Any) {
+        playerIndex = 0
+        playVideoUrl()
+    }
+    
+    
+    func timerFunction() {
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0,target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+        self.tickerTimer = Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.tickerFunc), userInfo: nil, repeats: true)
+        self.liveTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.liveLoad), userInfo: nil, repeats: true)
     }
     
     
     @objc func liveLoad() {
          getLive(completion: { (value) in
+        //  var values = true
              if value == true {
                  self.liveTimer.invalidate()
-                 self.playerView.pause()
+                 self.playerView.pause(reason: .userInteraction)
+                 self.playerView.playerLayer.isHidden = true
                  DispatchQueue.main.async {
                      let vc = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
                      vc.modalPresentationStyle = .fullScreen
+                     vc.delegate = self
                      self.present(vc, animated: true, completion: nil)
                  }
              }
          })
      }
+    
+    func valueFromSecond() {
+        getVideos(completion: { (videos) in
+            DispatchQueue.main.async {
+                print(videos)
+                self.videosList = videos
+                playerIndex = 0
+                self.playerView.playerURL = nil
+                self.playVideoUrl()
+                self.timerFunction()
+            }
+        })
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         print(playerIndex , "PlayerIndex")
@@ -124,12 +143,12 @@ class ViewController: UIViewController   {
             .suffix(from: min(playerIndex + 1, videosList.count))
             .prefix(1)
         print(urls,"url")
-       
+        if (!urls.isEmpty) {
             if let urlValue = URL(string: urls.first!) {
                 VideoPreloadManager.shared.set(waiting: Array(arrayLiteral: urlValue))
                 VideoPreloadManager.shared.start()
             }
-      
+        }
     }
     
     
@@ -138,37 +157,62 @@ class ViewController: UIViewController   {
         fetchTickerData(completion: { (ticker) in
             print(ticker.items?.count, "ticker.items?.count")
             let map = ticker.items?.map({ (items) -> NSMutableAttributedString in
-             
+                
+                let attri = NSMutableParagraphStyle()
+//                attri.lineBreakMode = .byCharWrapping
+                attri.alignment = .center
+                attri.allowsDefaultTighteningForTruncation = false
+                
                 let titleAttributes : [NSAttributedString.Key : Any] = [
-                   
+                    NSAttributedString.Key.paragraphStyle: attri,
+                    NSAttributedString.Key.baselineOffset: 13,
+                    NSAttributedString.Key.foregroundColor: UIColor.black,
                     NSAttributedString.Key.font: UIFont.Robotos(.bold, size: 17)
                         /*UIFont.systemFont(ofSize: 30, weight: .bold)*/]
                 let contentOtherAttributes : [NSAttributedString.Key : Any] = [
-                   NSAttributedString.Key.font: UIFont.Robotos(.regular, size: 17)
+                    NSAttributedString.Key.paragraphStyle: attri,
+                    NSAttributedString.Key.baselineOffset : 13,
+                    NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.Robotos(.regular, size: 17)
                         /*UIFont.systemFont(ofSize: 30, weight: .regular)*/,]
                 let iOtherAttributes : [NSAttributedString.Key : Any]  = [
-                  NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold)]
-                let titleText = NSMutableAttributedString.init(string: "\(items.title ?? "")     ")
+                    NSAttributedString.Key.paragraphStyle: attri,
+                    NSAttributedString.Key.baselineOffset : 5,
+                    NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold)]
+                let titlesV = items.title?.replacingOccurrences(of: "\n", with: " ")
+                let t1 = titlesV?.replacingOccurrences(of: "\r", with: "")
+                let t3 = t1?.replacingOccurrences(of: "\t", with: "")
+                let titleText = NSMutableAttributedString.init(string: "\(t3 ?? "")     ")
                 titleText.addAttributes(titleAttributes, range: NSRange(location: 0, length: titleText.length))
                 /*(string: "\(itemsV.title ?? "")    ", attributes: titleAttributes)*/
-                let contentText = NSMutableAttributedString.init(string: "\(items.content ?? "")")
+                let content = items.content?.replacingOccurrences(of: "\n", with: " ")
+                let c1 = content?.replacingOccurrences(of: "\r", with: "")
+                let c3 = c1?.replacingOccurrences(of: "\t", with: "")
+                let contentText = NSMutableAttributedString.init(string: "\(c3 ?? "")")
                 contentText.addAttributes(contentOtherAttributes, range: NSRange(location: 0, length: contentText.length))
                 
                 /*(string: "\(itemsV.content ?? "")  ", attributes: contentOtherAttributes)*/
                 let iText = NSMutableAttributedString.init(string: " I ")
                 iText.addAttributes(iOtherAttributes, range: NSRange(location: 0, length: iText.length))
                 /*(string: "I ", attributes: iOtherAttributes)*/
-                
                 iText.append(titleText)
                 iText.append(contentText)
+//                iText.append(contentText)
                 self.tickerData.append(iText)
-                return  self.tickerData
+                return self.tickerData
             })
-//            print(map, "map")
+            print(map, "map")
+            print(self.tickerData, "tickerdata")
             DispatchQueue.main.async {
+                print(self.tickerData.length, "self.tickerData.length")
                 self.marqueeTextValues.contentMode = .center
                 self.marqueeTextValues.baselineAdjustment = .alignCenters
                 self.marqueeTextValues.attributedText = self.tickerData
+                self.marqueeTextValues.speed = MarqueeLabel.SpeedLimit.duration(CGFloat(Double(self.tickerData.length) * 0.05))
+                self.marqueeTextValues.type = .continuous
+                self.marqueeTextValues.forceScrolling = false
+                self.marqueeTextValues.animationCurve = .linear
+                self.marqueeTextValues.fadeLength = 3.0
+//                self.marqueeTextValues.animationDelay =  0.5
             }
         })
     }
@@ -179,16 +223,26 @@ class ViewController: UIViewController   {
             print(ticker.items?.count, "ticker.items?.count")
             let map = ticker.items?.map({ (items) -> NSMutableAttributedString in
                 
-              
+                let attri = NSMutableParagraphStyle()
+                attri.lineBreakMode = .byCharWrapping
+                attri.alignment = .center
+                attri.allowsDefaultTighteningForTruncation = false
+                
                 let titleAttributes : [NSAttributedString.Key : Any] = [
-                   
+                    NSAttributedString.Key.paragraphStyle: attri,
+                    NSAttributedString.Key.baselineOffset: 13,
+                    NSAttributedString.Key.foregroundColor: UIColor.black,
                     NSAttributedString.Key.font: UIFont.Robotos(.bold, size: 17)
                         /*UIFont.systemFont(ofSize: 30, weight: .bold)*/]
                 let contentOtherAttributes : [NSAttributedString.Key : Any] = [
-                   NSAttributedString.Key.font: UIFont.Robotos(.regular, size: 17)
+                    NSAttributedString.Key.paragraphStyle: attri,
+                    NSAttributedString.Key.baselineOffset : 13,
+                    NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.Robotos(.regular, size: 17)
                         /*UIFont.systemFont(ofSize: 30, weight: .regular)*/,]
                 let iOtherAttributes : [NSAttributedString.Key : Any]  = [
-                   NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold)]
+                    NSAttributedString.Key.paragraphStyle: attri,
+                    NSAttributedString.Key.baselineOffset : 5,
+                    NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .bold)]
                 let titleText = NSMutableAttributedString.init(string: "\(items.title ?? "")     ")
                 titleText.addAttributes(titleAttributes, range: NSRange(location: 0, length: titleText.length))
                 /*(string: "\(itemsV.title ?? "")    ", attributes: titleAttributes)*/
@@ -202,6 +256,7 @@ class ViewController: UIViewController   {
                 
                 iText.append(titleText)
                 iText.append(contentText)
+                
                 self.tickerData.append(iText)
                 return  self.tickerData
             })
@@ -209,8 +264,12 @@ class ViewController: UIViewController   {
             DispatchQueue.main.async {
                 self.marqueeTextValues.contentMode = .center
                 self.marqueeTextValues.baselineAdjustment = .alignCenters
-                self.marqueeTextValues.attributedText = self.tickerData
-              
+                self.marqueeTextValues.attributedText = map?.first
+                self.marqueeTextValues.speed = MarqueeLabel.SpeedLimit.duration(CGFloat(Double(self.tickerData.length) * 0.05))
+                self.marqueeTextValues.forceScrolling = false
+                self.marqueeTextValues.animationCurve = .linear
+                self.marqueeTextValues.fadeLength = 3.0
+                self.marqueeTextValues.animationDelay = 0.5
             }
         })
     }
@@ -250,10 +309,8 @@ class ViewController: UIViewController   {
                DispatchQueue.main.async {
                    self.internetConnection = true
                    self.NoInternetLabel.isHidden = true
-                   self.timer = Timer.scheduledTimer(timeInterval: 1.0,target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
-                   self.tickerTimer = Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.tickerFunc), userInfo: nil, repeats: true)
-                   self.liveTimer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(self.liveLoad), userInfo: nil, repeats: true)
-                   
+                   self.timerFunction()
+//                   self.checktimer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(self.liveLoad), userInfo: nil, repeats: true)
                    self.getVideos(completion: { (videos) in
                        DispatchQueue.main.async {
                            print("ksjndjksnjnsdjnf")
@@ -295,6 +352,7 @@ class ViewController: UIViewController   {
         guard let videoURL = URL(string: self.videosList[playerIndex]) else { return }
         playerView.playerLayer.videoGravity = .resizeAspect
         playerView.play(for: videoURL)
+        self.playerView.playerLayer.isHidden = false
         playerView.player?.playImmediately(atRate: 1.0)
         NotificationCenter.default
             .addObserver(self,
@@ -304,8 +362,21 @@ class ViewController: UIViewController   {
     }
     
     @objc func playerDidFinishPlaying1(_ note: NSNotification) {
-        playVideoUrl()
-        checkPreload()
+        playerIndex += 1
+        if playerIndex + 1 > self.videosList.count {
+            getVideos(completion: { (videos) in
+                DispatchQueue.main.async {
+                    playerIndex = 0
+                    self.videosList = videos
+                    self.checkPreload()
+                    self.playVideoUrl()
+                }
+            })
+        } else {
+            playVideoUrl()
+            checkPreload()
+        }
+       
      }
     
 
@@ -360,6 +431,7 @@ class ViewController: UIViewController   {
                     do {
                         let jsonDecoder = JSONDecoder()
                         let responseModel = try jsonDecoder.decode(TickerData.self, from: data)
+                        print(responseModel.items?.count , "responseModel.items?.count")
                         completion(responseModel)
                     } catch let error {
                         print(error.localizedDescription)

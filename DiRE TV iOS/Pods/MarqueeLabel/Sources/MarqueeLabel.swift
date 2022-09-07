@@ -1881,7 +1881,7 @@ fileprivate extension UILabel {
         let maximumLabelSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
         // Calculate the expected size
         var expectedLabelSize = self.sizeThatFits(maximumLabelSize)
-        
+        print(expectedLabelSize.width)
         #if os(tvOS)
             // Sanitize width to 16384.0 (largest width a UILabel will draw on tvOS)
             expectedLabelSize.width = min(expectedLabelSize.width, 1000000000)

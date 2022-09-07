@@ -11,7 +11,8 @@ import AVFoundation
 import MarqueeLabel
 import Network
 
-class iPadViewController: UIViewController {
+class iPadViewController: UIViewController, fromiPadsecondVC {
+  
 
     @IBOutlet weak var playerView: VideoPlayerView!
     @IBOutlet weak var tickerView: UIView!
@@ -86,20 +87,40 @@ class iPadViewController: UIViewController {
             }
         }
     }
-    
+    func timerFunction() {
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0,target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+        self.tickerTimer = Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.tickerFunc), userInfo: nil, repeats: true)
+        self.liveTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.liveLoad), userInfo: nil, repeats: true)
+    }
     @objc func liveLoad() {
          getLive(completion: { (value) in
+           // var values = true
              if value == true {
                  self.liveTimer.invalidate()
                  self.playerView.pause(reason: .userInteraction)
                  DispatchQueue.main.async {
                      let vc = self.storyboard?.instantiateViewController(withIdentifier: "iPadWebViewController") as! iPadWebViewController
                      vc.modalPresentationStyle = .fullScreen
+                     vc.delegate = self
                      self.present(vc, animated: true, completion: nil)
                  }
              }
          })
      }
+    
+    
+    func valueFromSecond() {
+        getVideos(completion: { (videos) in
+            DispatchQueue.main.async {
+                print(videos)
+                self.videosList = videos
+                playerIndex = 0
+                self.playerView.playerURL = nil
+                self.playVideoUrl()
+                self.timerFunction()
+            }
+        })
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,10 +164,17 @@ class iPadViewController: UIViewController {
                 let iOtherAttributes : [NSAttributedString.Key : Any]  = [
                     NSAttributedString.Key.paragraphStyle: attri,
                     NSAttributedString.Key.foregroundColor: UIColor.red, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 80, weight: .bold)]
-                let titleText = NSMutableAttributedString.init(string: "\(items.title ?? "")     ")
+                let titlesV = items.title?.replacingOccurrences(of: "\n", with: " ")
+                let t1 = titlesV?.replacingOccurrences(of: "\r", with: "")
+                let t3 = t1?.replacingOccurrences(of: "\t", with: "")
+                let titleText = NSMutableAttributedString.init(string: "\(t3 ?? "")     ")
                 titleText.addAttributes(titleAttributes, range: NSRange(location: 0, length: titleText.length))
                 /*(string: "\(itemsV.title ?? "")    ", attributes: titleAttributes)*/
-                let contentText = NSMutableAttributedString.init(string: "\(items.content ?? "")")
+                let content = items.content?.replacingOccurrences(of: "\n", with: " ")
+                let c1 = content?.replacingOccurrences(of: "\r", with: "")
+                let c3 = c1?.replacingOccurrences(of: "\t", with: "")
+                
+                let contentText = NSMutableAttributedString.init(string: "\(c3 ?? "")")
                 contentText.addAttributes(contentOtherAttributes, range: NSRange(location: 0, length: contentText.length))
                 
                 /*(string: "\(itemsV.content ?? "")  ", attributes: contentOtherAttributes)*/
@@ -163,7 +191,7 @@ class iPadViewController: UIViewController {
                 self.marqueeTextValues.contentMode = .center
                 self.marqueeTextValues.baselineAdjustment = .alignCenters
                 self.marqueeTextValues.attributedText = self.tickerData
-                self.marqueeTextValues.speed = MarqueeLabel.SpeedLimit.duration(300)
+                self.marqueeTextValues.speed = MarqueeLabel.SpeedLimit.duration(CGFloat(Double(self.tickerData.length) * 0.05))
                 self.marqueeTextValues.forceScrolling = false
                 self.marqueeTextValues.animationCurve = .linear
                 self.marqueeTextValues.fadeLength = 3.0
@@ -209,10 +237,7 @@ class iPadViewController: UIViewController {
                DispatchQueue.main.async {
                    self.internetConnection = true
                    self.NoInternetLabel.isHidden = true
-                   self.timer = Timer.scheduledTimer(timeInterval: 1.0,target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
-                   self.tickerTimer = Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.tickerFunc), userInfo: nil, repeats: true)
-                   self.liveTimer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(self.liveLoad), userInfo: nil, repeats: true)
-                   
+                   self.timerFunction()
                    self.getVideos(completion: { (videos) in
                        DispatchQueue.main.async {
                            print("ksjndjksnjnsdjnf")
@@ -263,20 +288,22 @@ class iPadViewController: UIViewController {
             object: playerView.playerLayer.player?.currentItem)
     }
     
-    
-    func fromwebview() {
-        getVideos(completion: { (videos) in
-            DispatchQueue.main.async {
-                self.videosList = videos
-                playerIndex = 0
-                self.checkPreload()
-            }
-        })
-    }
-    
     @objc func playerDidFinishPlaying1(_ note: NSNotification) {
-        playVideoUrl()
-        checkPreload()
+        playerIndex += 1
+        if playerIndex + 1 > self.videosList.count {
+            getVideos(completion: { (videos) in
+                DispatchQueue.main.async {
+                    playerIndex = 0
+                    self.videosList = videos
+                    self.checkPreload()
+                    self.playVideoUrl()
+                }
+            })
+        } else {
+            playVideoUrl()
+            checkPreload()
+        }
+       
      }
     
     func getVideos(completion: @escaping ([String])-> ()) {

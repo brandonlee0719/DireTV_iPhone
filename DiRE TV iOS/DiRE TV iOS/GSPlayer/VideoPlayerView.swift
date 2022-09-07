@@ -51,7 +51,7 @@ open class VideoPlayerView: UIView {
     }
     
     /// URL currently playing.
-    public private(set) var playerURL: URL?
+    public var playerURL: URL?
     
     /// Get current video status.
     public private(set) var state: State = .none {
@@ -170,7 +170,9 @@ open class VideoPlayerView: UIView {
     ///
     /// - Parameter url: Can be a local or remote URL
     open func play(for url: URL) {
+        
         guard playerURL != url else {
+            print(pausedReason)
             pausedReason = .waitingKeepUp
             player?.play()
             return
@@ -185,10 +187,13 @@ open class VideoPlayerView: UIView {
         let player = AVQueuePlayer()
        
         let playerItem = AVPlayerItem(loader: url)
+        print(url, "url")
+        print(playerItem)
         playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = true
         player.automaticallyWaitsToMinimizeStalling = playerItem.isPlaybackBufferEmpty
         player.playImmediately(atRate: 1.0)
         playerItem.preferredForwardBufferDuration = TimeInterval(0)
+        player.replaceCurrentItem(with: playerItem)
         self.player = player
         self.playerURL = url
         self.pausedReason = .waitingKeepUp
@@ -296,11 +301,13 @@ private extension VideoPlayerView {
         guard state != previous else {
             return
         }
-        
-        switch state {
-        case .playing, .paused: isHidden = false
-        default:                isHidden = true
+        DispatchQueue.main.async {
+            switch state {
+            case .playing, .paused: self.isHidden = false
+            default:                self.isHidden = true
+            }
         }
+       
         
         stateDidChanged?(state)
     }
